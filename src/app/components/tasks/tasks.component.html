@@ -1,0 +1,10 @@
+<!-- here we don't have access to task, like in the component below with  -->
+<!-- the loop, use $event to get the task -->
+<app-add-task (onAddTask)="addTask($event)"></app-add-task>
+<!-- pass in prop of task -->
+<app-task-item
+  (onDeleteTask)="deleteTask(task)"
+  (onToggleReminder)="toggleReminder(task)"
+  *ngFor="let task of tasks"
+  [task]="task"
+></app-task-item>

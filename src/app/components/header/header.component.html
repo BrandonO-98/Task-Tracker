@@ -1,0 +1,14 @@
+<header>
+  <h1>{{ title }}</h1>
+  <!-- like passing props, we need to bring in Input -->
+  <!-- we also have a custom eventlistener that listens for the -->
+  <!-- event fired when the button is clicked -->
+
+  <!-- only show button on home page -->
+  <app-button
+    *ngIf="hasRoute('/')"
+    color="{{ showAddTask ? 'red' : 'green' }}"
+    text="{{ showAddTask ? 'Close' : 'Add' }}"
+    (btnClick)="toggleAddTask()"
+  ></app-button>
+</header>
